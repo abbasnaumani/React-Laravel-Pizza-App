@@ -1,0 +1,50 @@
+.input-text-cls {
+    padding: 0 10px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.checkout-form-cls {
+
+    /*background-color: #b18d4d;*/
+    /* text-align: center; */
+    justify-content: center;
+    padding: 50px;
+    margin-bottom: 50px;
+}
+
+.Invalid + span {
+    display: block !important;
+
+}
+
+.img-cls {
+    height: 150px;
+    width: 150px;
+    border-radius: 100px;
+}
+
+.menu-item-cls {
+    padding: 15px;
+}
+
+.main-btn-cls {
+    padding: 15px 15px 7px 15px;
+    border: 1px solid #121618;
+    border-radius: 50px;
+    background-color: #FAC564;
+}
+
+.main-btn-cls:hover {
+    border: 1px solid #fac564;
+    background: transparent !important;
+    color: #fac564;
+}
+
+.selected {
+    border: 1px solid #8D5D05;
+}
+
+.container {
+    padding-top: 20px;
+}
