@@ -8,7 +8,9 @@ use App\Repositories\RepositoryInterface\BaseRepositoryInterface;
 
 class OrderItemRepository extends BaseRepository implements BaseRepositoryInterface
 {
-
+    /**
+     * @param OrderItem $model
+     */
     public function __construct(OrderItem $model)
     {
         $this->model = $model;

@@ -20,6 +20,11 @@ class ProductController extends Controller
         $this->productService = $productService;
     }
 
+    /**
+     * Get All Products To Display.
+     *
+     * @return JsonResponse
+     */
     public function index(): JsonResponse
     {
         $products = $this->productService->getProducts();

@@ -18,6 +18,11 @@ class ProductService extends BaseService
         $this->productRepository = $productRepository;
     }
 
+    /**
+     * Get All Product From Product Model.
+     *
+     * @return object
+     */
     public function getProducts() :object
     {
         return $this->productRepository->getProducts();
