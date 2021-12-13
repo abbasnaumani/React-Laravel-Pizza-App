@@ -33,17 +33,19 @@ export const authFail = (error) => {
 };
 
 export const logout = () => {
+  if(localStorage.getItem('token')) {
+    axios.post('logout')
+        .then(response => {
 
-   axios.post('logout')
-    .then(response => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('expirationDate');
-        localStorage.removeItem('userId');
-      console.log(` Logout Flushed`);
-    })
-    .catch(err => {
+          console.log(` Logout Flushed`);
+        })
+        .catch(err => {
 
-    });
+        });
+  }
+  localStorage.removeItem('token');
+  localStorage.removeItem('expirationDate');
+  localStorage.removeItem('userId');
   //const response = await axios.post('logout');
   /*if (response.data.status === ApiResponse.SUCCESS) {
     localStorage.removeItem('token');

@@ -57,7 +57,7 @@ const Auth = (props) => {
         }
     });
     useEffect(() => {
-        console.log(props.authRedirectPath, ' I am login page..... useEffect');
+        console.log(props.authRedirectPath, 'I am login page..... useEffect');
         if (props.authRedirectPath !== '/') {
             props.onSetAuthRedirectPath();
         }
