@@ -46,7 +46,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * User Roles Relation it will retuen the all user assigned roles
+     * User Roles Relation it will return the all user assigned roles
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\MenuRole;
 use App\Models\User;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -14,10 +15,10 @@ class UserController extends Controller
     }
 
     /**
-     * Display a listing of the users
-     *
+     * Get All User and set in response.
+     * @return JsonResponse
      */
-    public function userList()
+    public function userList(): JsonResponse
     {
         $users = $this->getAllUsers();
         $this->setApiSuccessMessage(trans('user.get_user_list'), $users);
@@ -25,10 +26,10 @@ class UserController extends Controller
     }
 
     /**
-     * Display a listing of the users
-     *
+     * Get User Menus and set in response.
+     * @return JsonResponse
      */
-    public function userMenu()
+    public function userMenu(): JsonResponse
     {
         $menuItems = MenuRole::with('menu')->where('is_allow', 1)->whereIn('role_id', $this->userRoles())
             ->whereHas('menu', function ($query) {

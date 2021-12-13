@@ -15,5 +15,5 @@ class MyMedia extends Media
     protected $casts = [
         'custom_properties' => Json::class,
     ];
-    // Add your Methods here
+
 }

@@ -6,7 +6,13 @@ use App\Models\FailureLog;
 
 trait FailureLogs
 {
-    public function failureLog($name = '', $value = '', $jsonData = array())
+    /**
+     * @param string $name
+     * @param string $value
+     * @param array $jsonData
+     * @return void
+     */
+    public function failureLog(string $name = '',string $value = '',array $jsonData = array())
     {
         $record = [];
         $record['name'] = $name;

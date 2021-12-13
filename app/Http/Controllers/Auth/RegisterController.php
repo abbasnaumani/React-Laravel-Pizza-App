@@ -30,9 +30,6 @@ class RegisterController extends Controller
      * Handle an incoming registration request.
      *
      * @param \Illuminate\Http\Request $request
-     *
-     *
-     *
      */
     public function __invoke(RegisterRequest $request)
     {

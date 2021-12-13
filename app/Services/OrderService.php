@@ -28,6 +28,7 @@ class OrderService extends BaseService
     }
 
     /**
+     * This Method creates an order for user.
      * @param Request $request
      * @return void
      */

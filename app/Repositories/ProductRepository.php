@@ -21,6 +21,7 @@ class ProductRepository extends BaseRepository implements BaseRepositoryInterfac
     // Add your repository methods here
 
     /**
+     * Return Product with its category and images.
      * @return Builder[]|Collection
      */
     public function getProducts()

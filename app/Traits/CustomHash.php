@@ -4,8 +4,12 @@ namespace App\Traits;
 
 trait CustomHash
 {
-
-    public function hashKey()
+    /**
+     * return array.
+     *
+     * @return string[]
+     */
+    public function hashKey(): array
     {
         return [
             'str' => '6rG&;q',
@@ -13,7 +17,13 @@ trait CustomHash
         ];
     }
 
-    public function customEncode($dataToEncode)
+    /**
+     * Encode given data.
+     *
+     * @param string $dataToEncode
+     * @return string
+     */
+    public function customEncode(string $dataToEncode): string
     {
         $encodeArray = [];
         $encodedKey = $this->encodeData($dataToEncode);
@@ -31,7 +41,14 @@ trait CustomHash
         }
         return $encodedKey;
     }
-    public function customDecode($dataToEncode)
+
+    /**
+     * Decode given input data.
+     *
+     * @param string $dataToEncode
+     * @return string|null
+     */
+    public function customDecode(string $dataToEncode): ?string
     {
         $decodedKey = $this->decodeData($dataToEncode);
         if (trim($decodedKey) != '') {
@@ -43,12 +60,25 @@ trait CustomHash
         }
         return $decodedKey??null;
     }
-    public function encodeData($data)
+
+    /**
+     * encode given data.
+     *
+     * @param string $data
+     * @return string
+     */
+    public function encodeData(string $data): string
     {
         return base64_encode(urlencode($data));
     }
 
-    public function decodeData($data)
+    /**
+     * decode given data.
+     *
+     * @param string $data
+     * @return string
+     */
+    public function decodeData(string $data): string
     {
         return urldecode(base64_decode($data));
     }

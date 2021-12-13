@@ -8,9 +8,4 @@ class FailureLog extends Model
 {
     protected $table = 'failure_logs';
     public $fillable = ['name', 'value', 'json_data'];
-
-    public function setUpdatedAt($value)
-    {
-        // Do nothing.
-    }
 }

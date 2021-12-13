@@ -8,7 +8,10 @@ trait GlobalSettingsTrait
 {
     protected $globalSettings = null;
 
-    public function prepareGlobalSettings()
+    /**
+     * @return array|null
+     */
+    public function prepareGlobalSettings(): ?array
     {
         if (!$this->globalSettings) {
             $prepareGlobalSettings = [];
@@ -26,29 +29,12 @@ trait GlobalSettingsTrait
         return $this->globalSettings;
     }
 
-    public function getGlobalSettings()
+    /**
+     * @return array|null
+     */
+    public function getGlobalSettings(): ?array
     {
         return $this->globalSettings ?? $this->prepareGlobalSettings();
-    }
-
-    public function getGlobalSettingByName($name = null)
-    {
-        $setting = null;
-        if ($name) {
-            $globalSettings = $this->globalSettings ?? $this->prepareGlobalSettings();
-            $setting = $globalSettings[$name] ?? null;
-        }
-        return $setting;
-    }
-
-    public function getGlobalSettingValueByName($name = null)
-    {
-        $settingValue = null;
-        if ($name) {
-            $globalSettings = $this->globalSettings ?? $this->prepareGlobalSettings();
-            $settingValue = $globalSettings[$name]['value'] ?? null;
-        }
-        return $settingValue;
     }
 
 }
